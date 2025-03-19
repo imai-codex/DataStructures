@@ -1,0 +1,39 @@
+public class linked_list {
+    Node head;
+    class Node{
+        int data;
+        Node next;
+        Node(int val){
+            data=val;
+            next=null;
+        }
+    }
+    public linked_list(){
+        head=null;
+    }
+    public void insertAtBegin(int val){
+        Node newNode=new Node(val);
+        if (head==null) {
+            head=newNode;
+        }
+        else{
+            Node temp=head;
+            newNode.next=temp;
+            head=newNode;
+        }
+    }
+    public void display(){
+        Node temp=head;
+        while (temp!=null) {
+            System.out.print(temp.data+" ");
+            temp=temp.next;
+        }
+    }
+    public static void main(String[] args) {
+        linked_list l=new linked_list();
+        l.insertAtBegin(26);
+        l.insertAtBegin(11);
+        l.insertAtBegin(55);
+        l.display();
+        }
+}
